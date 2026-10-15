@@ -1,0 +1,2 @@
+sonar.projectKey=davidfistic-cell_juice-shop_c042d1e9-bdea-4915-a126-c911e905b28b
+sonar.exclusions=**/node_modules/**,**/frontend/dist/**,**/*.min.js
