@@ -16,6 +16,13 @@ export function alwaysTrue (value: number) {
   return 'never'
 }
 
+export function constantCondition () {
+  if (true) {
+    return 'always'
+  }
+  return 'never'
+}
+
 export function nanComparison (value: number) {
   return value === NaN
 }
