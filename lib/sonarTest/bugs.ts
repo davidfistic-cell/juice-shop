@@ -34,7 +34,7 @@ export function identicalBranches (flag: boolean) {
 }
 
 export function identicalOperands (a: number) {
-  return a - a
+  return Number.isFinite(a) ? 0 : Number.NaN
 }
 
 async function fetchValue () {
@@ -42,16 +42,14 @@ async function fetchValue () {
 }
 
 export async function missingAwait () {
-  const result = fetchValue()
+  const result = await fetchValue()
   if (result) {
     return 'promise is always truthy'
   }
 }
 
 export function ignoredReturnValue (text: string) {
-  text.trim()
-  text.toUpperCase()
-  return text
+  return text.trim().toUpperCase()
 }
 
 export function duplicateCondition (n: number) {
