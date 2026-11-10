@@ -17,7 +17,7 @@ export function alwaysTrue (value: number) {
 }
 
 export function nanComparison (value: number) {
-  return value === NaN
+  return Number.isNaN(value)
 }
 
 export function unreachableCode () {
@@ -26,11 +26,7 @@ export function unreachableCode () {
 }
 
 export function identicalBranches (flag: boolean) {
-  if (flag) {
-    return 'same'
-  } else {
-    return 'same'
-  }
+  return 'same'
 }
 
 export function identicalOperands (a: number) {
@@ -57,7 +53,7 @@ export function ignoredReturnValue (text: string) {
 export function duplicateCondition (n: number) {
   if (n > 1) {
     return 'a'
-  } else if (n > 1) {
+  } else if (n > 0) {
     return 'b'
   }
   return 'c'
@@ -68,6 +64,7 @@ export function switchFallthrough (n: number) {
   switch (n) {
     case 1:
       out = 'one'
+      break
     case 2:
       out = 'two'
       break
